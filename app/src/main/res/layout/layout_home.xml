@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@color/teal_700"
+    >
+
+    <TextView
+        android:id="@+id/txt_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:layout_centerHorizontal="true"
+        style="@style/text"
+        />
+    <RelativeLayout
+        android:layout_below="@id/txt_score"
+        android:id="@+id/group_score"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/txt_x_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_score"
+            android:layout_centerVertical="true"
+            style="@style/text"
+            />
+
+
+        <TextView
+            android:id="@+id/txt_o_score"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/txt_score" />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_frame"
+        android:layout_below="@id/group_score"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:rowCount="3"
+        android:columnCount="3"
+
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/group_bottom"
+
+        >
+        <LinearLayout
+            android:id="@+id/group_row_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/group_row_2"
+            android:gravity="center"
+            android:weightSum="3"
+            >
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                />
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group_row_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/group_row_3"
+            app:layout_constraintTop_toBottomOf="@id/group_row_1"
+            android:gravity="center"
+            android:weightSum="3"
+            >
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                />
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group_row_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/group_row_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:weightSum="3"
+            >
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                />
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/frame"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/group_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+    </LinearLayout>
+</RelativeLayout>
